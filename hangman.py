@@ -2,49 +2,42 @@ import random
 
 #function for hangman drawing in 10 incorrect attempts
 def draw(missed):
-    if missed == 1:
-        print("  0 ")
-    elif missed == 2:
-        print("  0 ")
-        print("  | ")
-    elif missed == 3:
-        print("  0 ")
-        print("  | ")
-        print(" /  ")
-    elif missed == 4:
-        print("  0  ")
-        print("  |  ")
-        print(" / \ ")
-    elif missed == 5:
-        print(" \0  ")
-        print("  |  ")
-        print(" / \ ")
-    elif missed == 6:
-        print(" \0/ ")
-        print("  |  ")
-        print(" / \ ")
-    elif missed == 7:
-        print("      | ")
-        print(" \0/  | ")
-        print("  |   | ")
-        print(" / \    ")
-    elif missed == 8:
-        print("      | ")
-        print(" \0/  | ")
-        print("  |   | ")
-        print(" / \ / \ ")
-    elif missed == 9:
-        print("  ----- ")
-        print("      | ")
-        print(" \0/  | ")
-        print("  |   | ")
-        print(" / \ / \ ")
-    elif missed == 10:
-        print("  ----- ")
-        print("  |   | ")
-        print("  0   | ")
-        print(" /|\  | ")
-        print(" / \ / \ ")
+    switcher = {
+    1:  "  O ",
+    2:  "  O \n"
+        "  | ",
+    3:  "  O \n"
+        "  | \n"
+        " /  ",
+    4:  "  O  \n"
+        "  |  \n"
+        " / \ ", 
+    5:  " \O  \n"
+        "  |  \n"
+        " / \ ",
+    6:  " \O/ \n"
+        "  |  \n"
+        " / \ ",           
+    7:  "      | \n"
+        " \O/  | \n"
+        "  |   | \n"
+        " / \    ",  
+    8:  "      | \n"
+        " \O/  | \n"
+        "  |   | \n"
+        " / \ / \ ", 
+    9:  "  ----- \n"
+        "      | \n"
+        " \O/  | \n"
+        "  |   | \n"
+        " / \ / \ ", 
+    10: "  ----- \n"
+        "  |   | \n"
+        "  O   | \n"
+        " /|\  | \n"
+        " / \ / \ " 
+    }
+    return print(switcher.get(missed))
 
 def hangman():
     wordlist = ["tiger", "badger", "beaver", "cougar", "eagle", "elephant", "flamingo", "gorilla", "lobster", "pokemon"]
